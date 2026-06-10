@@ -1,37 +1,84 @@
 # Dataset Explorer Tool
 
-## Objective
+## Overview
 
-This project automatically explores a CSV dataset using Python and Pandas. It loads the dataset, analyzes its structure, identifies missing values, generates summary statistics, and detects outliers using the IQR method.
+Dataset Explorer Tool is a Python-based data analysis project that automatically explores a CSV dataset and provides useful insights about its structure and quality.
+
+The tool loads a dataset, inspects its columns and data types, identifies missing values, generates summary statistics, detects outliers using the IQR method, and visualizes numeric data using histograms.
 
 ## Features
 
-* Load a CSV dataset
+* Load CSV datasets using Pandas
 * Display dataset shape
 * Display column names and data types
-* Show the first 5 rows of data
+* Show the first 5 rows of the dataset
 * Detect missing values and percentages
 * Generate summary statistics for numeric columns
-* Detect outliers using the IQR method
+* Detect outliers using the IQR (Interquartile Range) method
+* Visualize numerical columns using histograms
 
-## Requirements
+## Technologies Used
 
-* Python 3.x
+* Python 3
 * Pandas
+* Matplotlib
 
 ## Installation
 
-pip install pandas
+Install the required libraries:
 
-## Run the Project
+```bash id="p4ls7f"
+pip install pandas matplotlib
+```
 
+## How to Run
+
+1. Place the dataset file (`titanic.csv`) in the project folder.
+2. Open the terminal in VS Code.
+3. Run:
+
+```bash id="8rfc8v"
 python explorer.py
+```
 
 ## Dataset Used
 
 Titanic Dataset (CSV)
 
-## Sample Results
+The dataset contains passenger information such as age, gender, passenger class, ticket fare, and survival status.
+
+## Analysis Performed
+
+### Dataset Inspection
+
+* Dataset shape
+* Column names
+* Data types
+* First 5 rows
+
+### Missing Value Analysis
+
+* Count of missing values
+* Percentage of missing values
+
+### Statistical Summary
+
+* Mean
+* Median
+* Standard Deviation
+* Minimum Value
+* Maximum Value
+
+### Outlier Detection
+
+* IQR (Interquartile Range) Method
+
+### Data Visualization
+
+* Histogram for each numeric column
+* Distribution analysis of numerical features
+
+## Sample Output
 
 ### Dataset Shape
 
@@ -40,33 +87,47 @@ Titanic Dataset (CSV)
 
 ### Missing Values
 
-* Age: 177
-* Cabin: 687
-* Embarked: 2
+| Column   | Missing Values |
+| -------- | -------------- |
+| Age      | 177            |
+| Cabin    | 687            |
+| Embarked | 2              |
 
 ### Outliers Detected
 
-* Age: 11
-* SibSp: 46
-* Parch: 213
-* Fare: 116
+| Column | Outliers |
+| ------ | -------- |
+| Age    | 11       |
+| SibSp  | 46       |
+| Parch  | 213      |
+| Fare   | 116      |
 
 ## Project Structure
 
+```text id="djjlwm"
 Task_2/
-│
 ├── explorer.py
 ├── titanic.csv
 └── README.md
+```
 
 ## Repository Link
 
-https://github.com/saranya-R16/Task_2
+Repository: https://github.com/saranya-R16/Task_2
 
-## Project Link
+## Future Improvements
 
-https://github.com/saranya-R16/Task_2
+* Add box plots for better outlier visualization
+* Export analysis results to CSV or Excel
+* Support multiple dataset formats
+* Create an interactive dashboard using Streamlit
+
+## License
+
+This project is licensed under the MIT License and is intended for educational and learning purposes.
 
 ## Author
 
 Saranya R
+
+GitHub: https://github.com/saranya-R16
