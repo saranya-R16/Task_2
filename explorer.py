@@ -1,15 +1,16 @@
 import pandas as pd
 
+# Load CSV
 def load_data(filepath):
     try:
         df = pd.read_csv(filepath)
         print(f"\nFile loaded: {filepath}")
         return df
-
     except FileNotFoundError:
         print("File not found. Check your path.")
         return None
 
+# Inspect dataset
 def inspect_data(df):
     print("\nShape:", df.shape)
 
@@ -19,6 +20,7 @@ def inspect_data(df):
     print("\nFirst 5 Rows:")
     print(df.head())
 
+# Check missing values
 def check_missing(df):
     print("\nMissing Values:")
 
@@ -32,26 +34,23 @@ def check_missing(df):
 
     print(summary[summary['Count'] > 0])
 
+# Summary statistics
 def summary_stats(df):
     print("\nSummary Statistics (Numeric Columns):")
 
-    stats = df.describe().T[
-        ['mean', '50%', 'std', 'min', 'max']
-    ]
-
-    stats = stats.rename(
-        columns={'50%': 'median'}
+    print(
+        df.describe().T[
+            ['mean', '50%', 'std', 'min', 'max']
+        ].rename(columns={'50%': 'median'})
     )
 
-    print(stats)
-
+# Outlier detection using IQR
 def detect_outliers(df):
     print("\nOutlier Detection (IQR Method):")
 
     numeric_cols = df.select_dtypes(include='number').columns
 
     for col in numeric_cols:
-
         Q1 = df[col].quantile(0.25)
         Q3 = df[col].quantile(0.75)
 
@@ -64,6 +63,7 @@ def detect_outliers(df):
 
         print(f"{col}: {len(outliers)} outlier(s)")
 
+# Main block
 if __name__ == "__main__":
 
     filepath = "titanic.csv"
