@@ -21,15 +21,11 @@ This project automatically explores a CSV dataset using Python and Pandas. It lo
 
 ## Installation
 
-```bash
 pip install pandas
-```
 
 ## Run the Project
 
-```bash
 python explorer.py
-```
 
 ## Dataset Used
 
@@ -62,6 +58,14 @@ Task_2/
 ├── explorer.py
 ├── titanic.csv
 └── README.md
+
+## Repository Link
+
+https://github.com/saranya-R16/Task_2
+
+## Project Link
+
+https://github.com/saranya-R16/Task_2
 
 ## Author
 
